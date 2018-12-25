@@ -7,6 +7,7 @@
 	<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
 	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 	<title>金燕-首页</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<!-- Bootstrap -->
 	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/swiper-4.3.5.min.css">
@@ -83,7 +84,7 @@
 		<p>A CLASSIS CASE</p>
 		<span class="red-bar"></span>		
 	</div>
-	<div class = "caroursel poster-main" data-setting = '{
+	<div class = "caroursel poster-main hidden-xs" data-setting = '{
         "width":1440,
         "height":515,
         "posterWidth":1200,
@@ -100,6 +101,15 @@
         <div class = "poster-btn poster-prev-btn"></div>
         <div class = "poster-btn poster-next-btn"></div>
     </div>
+	<div class="swiper-container visible-xs-block" id="index-banner2">
+		<div class="swiper-wrapper" style="height: 600px">
+			<div class="swiper-slide" style="background: url(img/classic-banner1.png) no-repeat center;"></div>
+			<div class="swiper-slide" style="background: url(img/classic-banner2.png) no-repeat center;"></div>
+			<div class="swiper-slide" style="background: url(img/classic-banner3.png) no-repeat center;"></div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
 </section>
 <!-- /首页banner2 -->
 
@@ -117,16 +127,17 @@
 	<h2>品牌全案</h2>
 	<p>BRAND THE WHOLE CASE</p>
 	<ul class="row">
-		<li class="col-md-6" style="padding-right: 15px;">
+		<li class="col-md-6">
 			<div class="clearfix">
-			<img src="img/brand-1.png" alt="" class="pull-left">
-			<div class="mask">
-				<p>惠而浦案例</p>
-				<a href="#" class="more">MORE+</a>
+				<img src="img/brand-1.png" alt="" class="pull-left">
+				<div class="mask">
+					<p>惠而浦案例</p>
+					<a href="#" class="more">MORE+</a>
+				</div>
 			</div>
-			</div>
+			<p class="visible-xs-block">惠而浦案例</p>
 		</li>
-		<li class="col-md-6" style="padding-left: 15px;">
+		<li class="col-md-6">
 			<div class="clearfix">
 				<img src="img/brand-2.png" alt="" class="pull-right">
 				<div class="mask">
@@ -134,8 +145,9 @@
 					<a href="#" class="more">MORE+</a>
 				</div>
 			</div>
+			<p class="visible-xs-block">西门子案例</p>
 		</li>
-		<li class="col-md-6" style="padding-right: 15px;">
+		<li class="col-md-6">
 			<div class="clearfix">
 				<img src="img/brand-3.png" alt="" class="pull-left">
 				<div class="mask">
@@ -143,8 +155,9 @@
 					<a href="#" class="more">MORE+</a>
 				</div>
 			</div>
+			<p class="visible-xs-block">康尔家案例</p>
 		</li>
-		<li class="col-md-6" style="padding-left: 15px;">
+		<li class="col-md-6">
 			<div class="clearfix">
 				<img src="img/brand-4.png" alt="" class="pull-right">
 				<div class="mask">
@@ -152,6 +165,7 @@
 					<a href="#" class="more">MORE+</a>
 				</div>
 			</div>
+			<p class="visible-xs-block">巧迪尚案例</p>
 		</li>
 	</ul>
 </section>
@@ -160,7 +174,9 @@
 <div class="index-video">
 	<h2>视频营销</h2>
 	<p>VIDEO MARKETING</p>
-	<img src="img/index-video.png" alt="" width="100%">
+	<!-- <img src="img/index-video.png" alt="" width="100%"> -->
+	<!-- <iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=u05395ip1gp" allowFullScreen="true"></iframe> -->
+	<video class="video" src="https://ugcsjy.qq.com/uwMRJfz-r5jAYaQXGdGnC2_ppdhgmrDlPaRvaV7F2Ic/u05395ip1gp.p712.1.mp4?sdtfrom=v1104&guid=b56001f6acf59def4ef3018e0d548d40&vkey=4D483A89294168B74CB4FF7110595D73416905BD60BC1E9E0D5D072291D3D0A17A1265336D774647E3C4CA148C8CAAA6011EE604AD3FFCDA97669724AF87E9AD42902B5D9EDF3E388811BEC2F0EDA6B9E87B7B4B3A664724CB1AA3BDF9AAFB865D6F899079E819722D02D55FA6F0A5B3A505F5B480BBAD4F" autoplay controls="controls"></video>
 </div>
 <!-- /视频营销 -->
 
@@ -176,7 +192,7 @@
 		<li><a href="contact.html">联系我们</a></li>
 	</ul>
 	<div style="margin-top: 28px;margin-bottom: 10px;">
-		<img src="img/footer-logo.png" alt="">
+		<img src="img/footer-logo.png" alt="" class="hidden-xs">
 	</div>
 	<p>广州金燕达观广告有限公司版权所有 粤ICP备12036076号</p>
 	<div>
@@ -194,18 +210,43 @@
 <script type="text/javascript" src="lib/swiper-4.3.5.min.js"></script>
 
 <script>
-	Caroursel.init($('.caroursel'));
-	var swiper = new Swiper('#index-banner', {
-      
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
+	$(function(){
+		if($(window).width() < 750){
+			$(".swiper-wrapper").height(300);
+		}
+		Caroursel.init($('.caroursel'));
+		var swiper = new Swiper('#index-banner', {
+	      loop: true,
+	      autoplay: {
+	        delay: 4000,
+	        disableOnInteraction: true,
+	      },
+	      pagination: {
+	        el: '.swiper-pagination',
+	        clickable: true,
+	      },
+	    });
+
+	    var swiper2 = new Swiper('#index-banner2', {
+	      effect: 'coverflow',
+	      grabCursor: true,
+	      centeredSlides: true,
+	      slidesPerView: 'auto',
+	      coverflowEffect: {
+	        rotate: 50,
+	        stretch: 0,
+	        depth: 100,
+	        modifier: 1,
+	        slideShadows : true,
+	      },
+	      autoplay: {
+	        delay: 4000,
+	        disableOnInteraction: true,
+	      },
+	    });
+
+	})
+
 </script>
 </body>
 </html>
